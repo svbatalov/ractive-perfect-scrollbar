@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style type="text/css" media="screen">
+            .scroll-wrapper {
+                position: relative;
+                overflow: hidden;
+                height: 300px;
+                width: 250px;
+                border: 1px solid black;
+            }
+            .ps-scrollbar-y {
+                background-color: red !important;
+            }
+        </style>
+        <script id='template' type="text/ractive">
+            <div>
+                Line counter: {{list.length}}
+            </div>
+
+            <Scroll class="scroll-wrapper" opts="{{scrollopts}}" update="{{update}}">
+                {{#list}}
+                    <div>{{.}}</div>
+                {{/}}
+            </Scroll>
+        </script>
+
+    </head>
+    <body>
+        <div id="entry"></div>
+
+        <script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
+        <script src="../dist/index.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

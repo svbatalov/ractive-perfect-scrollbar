@@ -1,0 +1,36 @@
+{
+  "name": "ractive-perfect-scrollbar",
+  "version": "1.0.0",
+  "description": "A wrapper for perfect-scrollbar using its new CommonJS API and injecting CSS automatically.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify -x ractive -s ractive-perfect-scrollbar -t browserify-css -t browserify-shim -p browserify-derequire index.js > dist/index.js",
+		"prepublish": "npm run build"
+  },
+  "keywords": [
+		"ractive",
+		"component",
+    "scroll",
+    "perfect-scrollbar",
+    "browserify"
+  ],
+  "author": "Sergey Batalov",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "browserify-css": "^0.6.1",
+    "browserify-derequire": "^0.9.4",
+    "browserify-shim": "^3.8.10"
+  },
+  "dependencies": {
+    "perfect-scrollbar": "^0.6.4"
+  },
+  "browserify-css": {
+    "autoInject": true,
+    "minify": false
+  },
+	"browserify-shim": {
+		"ractive": "global:Ractive"
+	}
+}
